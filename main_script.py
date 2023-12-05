@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import ballPos
+import particle
 
 #Initial conditions/static values
 m_gas = 10**-22 #Mass of each gas particle in kg (Change later)
@@ -49,6 +50,7 @@ class Ball:
         return new
     
     def particle_move(self):
+        new = particle()
         return 1
     
 
@@ -63,6 +65,7 @@ py_gas = [py0_gas]
 while i < num_steps:
     iteration = Ball(dt, x[-1], y[-1], x_gas[-1], y_gas[-1], px[-1], py[-1], px_gas[-1], py_gas[-1], r_ball, m_ball, m_gas, box_width, box_height, num_particles)
     x_new = Ball.ball_move() #Update variables with this
+    particle_x_new = Ball.particle_move()
     #Add updated variables to arrays
     i+=1
 
