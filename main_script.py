@@ -46,7 +46,7 @@ class Ball:
         self.num_particles = num_particles
 
     def ball_move(self):
-        new = ballPos()
+        new = ballPos.BallPosition()
         return new
     
     def particle_move(self):
